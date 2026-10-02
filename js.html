@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <style>
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      body {
+        font-family: Arial;
+        background: #f0f0f0;
+        margin: 20px;
+      }
+      nav {
+        background: #333;
+        padding: 10px;
+      }
+      nav a {
+        color: white;
+        margin-right: 15px;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+      }
+      nav a:hover {
+        background: #555;
+      }
+      .active {
+        background: yellow;
+        color: black;
+        padding: 5px;
+      }
+      input {
+        padding: 5px;
+      }
+      button {
+        padding: 5px 10px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="forms.html">Формы</a>
+      <a href="js.html" class="active">JavaScript</a>
+      <a href="index.html#photos">Фото кота</a>
+      <a
+        href="https://github.com/vmarshirov/g06u28/tree/main/010_html/060_anchor"
+        target="_blank"
+        >Пример якорей</a
+      >
+    </nav>
+
+    <h1>Работа с JavaScript</h1>
+
+    <!-- ========== 1. ЧТЕНИЕ ИЗ DOM ========== -->
+    <h2>1. Читаем данные из DOM</h2>
+
+    <p>Имя: <span id="name_id">Глинин</span></p>
+    <p>Фамилия: <span id="secondName_id">Бесик</span></p>
+    <p>Год рождения: <span id="year_of_birthday_id">2026</span></p>
+
+    <button id="for_click">Прочитать данные из DOM</button>
+    <p id="result_id"></p>
+
+    <p>Скриншот:</p>
+    <img src="screeenshot.png" width="600" alt="Скриншот" />
+
+    <!-- ========== 2. КИРИЛЛИЦА → ЛАТИНИЦА ========== -->
+    <h2>2. Меняем кириллицу на латиницу</h2>
+
+    <p>Имя: <span id="name2_id">Глинин</span></p>
+    <p>Фамилия: <span id="secondName2_id">Бесик</span></p>
+
+    <button id="for_click2">Преобразовать в латиницу</button>
+    <p id="result2_id"></p>
+
+    <!-- ========== 3. АЛГОРИТМИЧЕСКАЯ ЗАДАЧА ========== -->
+    <h2>3. Алгоритмическая задача</h2>
+
+    <p>
+      Задача: дано число X. Определить, принадлежит ли это число промежутку [a,
+      b].
+    </p>
+
+    <label>Число X: </label>
+    <input type="number" id="x_id" value="5" /><br />
+
+    <label>Начало промежутка a: </label>
+    <input type="number" id="a_id" value="1" /><br />
+
+    <label>Конец промежутка b: </label>
+    <input type="number" id="b_id" value="10" /><br />
+
+    <button id="for_click3">Решить</button>
+    <p id="result3_id"></p>
+
+    <hr />
+    <p><a href="index.html">На главную</a></p>
+
+    <script>
+      // ============================================
+      // 1. ЧТЕНИЕ ИЗ DOM
+      // ============================================
+      function find_edit() {
+        const name_node = document.getElementById("name_id");
+        console.log(name_node.innerHTML);
+        const second_name_node = document.getElementById("secondName_id");
+        console.log(second_name_node.innerHTML);
+        const year_node = document.getElementById("year_of_birthday_id");
+        console.log(year_node.innerHTML);
+
+        const result_node = document.getElementById("result_id");
+        result_node.innerHTML =
+          "Имя: " +
+          name_node.innerHTML +
+          ", Фамилия: " +
+          second_name_node.innerHTML +
+          ", Год: " +
+          year_node.innerHTML;
+        console.log(result_node.innerHTML);
+      }
+      const node_for_click = document.getElementById("for_click");
+      node_for_click.addEventListener("click", find_edit);
+
+      // ============================================
+      // 2. КИРИЛЛИЦА → ЛАТИНИЦА
+      // ============================================
+      function find_edit2() {
+        const name_node = document.getElementById("name2_id");
+        console.log(name_node.innerHTML);
+        name_node.innerHTML = "Glinin";
+        console.log(name_node.innerHTML);
+
+        const second_name_node = document.getElementById("secondName2_id");
+        console.log(second_name_node.innerHTML);
+        second_name_node.innerHTML = "Besik";
+        console.log(second_name_node.innerHTML);
+
+        const result_node = document.getElementById("result2_id");
+        result_node.innerHTML = "Готово!";
+      }
+      const node_for_click2 = document.getElementById("for_click2");
+      node_for_click2.addEventListener("click", find_edit2);
+
+      // ============================================
+      // 3. АЛГОРИТМИЧЕСКАЯ ЗАДАЧА
+      // ============================================
+      function find_edit3() {
+        const x_node = document.getElementById("x_id");
+        const a_node = document.getElementById("a_id");
+        const b_node = document.getElementById("b_id");
+
+        console.log("X = " + x_node.value);
+        console.log("a = " + a_node.value);
+        console.log("b = " + b_node.value);
+
+        const x = Number(x_node.value);
+        const a = Number(a_node.value);
+        const b = Number(b_node.value);
+
+        const result_node = document.getElementById("result3_id");
+
+        if (x >= a && x <= b) {
+          result_node.innerHTML =
+            "Число " + x + " принадлежит промежутку [" + a + ", " + b + "]";
+          console.log("Принадлежит");
+        } else {
+          result_node.innerHTML =
+            "Число " + x + " НЕ принадлежит промежутку [" + a + ", " + b + "]";
+          console.log("Не принадлежит");
+        }
+      }
+      const node_for_click3 = document.getElementById("for_click3");
+      node_for_click3.addEventListener("click", find_edit3);
+    </script>
+  </body>
+</html>

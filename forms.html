@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Формы</title>
+    <style>
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      body {
+        font-family: Arial;
+        background: #f0f0f0;
+        margin: 20px;
+      }
+      nav {
+        background: #333;
+        padding: 10px;
+      }
+      nav a {
+        color: white;
+        margin-right: 15px;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+      }
+      nav a:hover {
+        background: #555;
+      }
+      .active {
+        background: yellow;
+        color: black;
+        padding: 5px;
+      }
+      input {
+        display: block;
+        margin: 5px 0;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="forms.html" class="active">Формы</a>
+      <a href="js.html">JavaScript</a>
+      <a href="index.html#photos">Фото кота</a>
+      <a
+        href="https://github.com/vmarshirov/g06u28/tree/main/010_html/060_anchor"
+        target="_blank"
+        >Пример якорей</a
+      >
+    </nav>
+
+    <h1>Формы</h1>
+
+    <h2>Форма контактов</h2>
+    <form action="https://httpbin.org/post" method="POST">
+      <label>Фамилия:</label>
+      <input type="text" name="lastname" />
+
+      <label>Имя:</label>
+      <input type="text" name="firstname" />
+
+      <label>Группа:</label>
+      <input type="text" name="group" />
+
+      <label>Телефон:</label>
+      <input type="text" name="phone" />
+
+      <label>Email:</label>
+      <input type="email" name="email" />
+
+      <label>Дата:</label>
+      <input type="date" name="date" value="2026-09-23" />
+
+      <input type="submit" value="Отправить" />
+    </form>
+
+    <h2>Форма заказа корма</h2>
+    <form action="https://httpbin.org/post" method="POST">
+      <label>Товар:</label>
+      <input type="text" name="product" value="Корм для кота" />
+
+      <label>Количество:</label>
+      <input type="number" name="quantity" value="1" />
+
+      <p>Тип доставки:</p>
+      <label
+        ><input type="radio" name="delivery" value="обычная" checked />
+        Обычная</label
+      >
+      <label
+        ><input type="radio" name="delivery" value="экспресс" /> Экспресс</label
+      >
+
+      <p>Дополнительно:</p>
+      <label
+        ><input type="checkbox" name="options" value="упаковка" />
+        Упаковка</label
+      >
+      <label
+        ><input type="checkbox" name="options" value="страховка" />
+        Страховка</label
+      >
+
+      <label>Дата доставки:</label>
+      <input type="date" name="delivery_date" />
+
+      <label>Пароль:</label>
+      <input type="password" name="password" />
+
+      <input type="hidden" name="shop_id" value="12345" />
+
+      <input type="submit" value="Заказать" />
+    </form>
+
+    <hr />
+    <p><a href="index.html">На главную</a></p>
+  </body>
+</html>

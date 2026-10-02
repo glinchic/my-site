@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сайт про кота</title>
+    <style>
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      body {
+        font-family: Arial;
+        background: #f0f0f0;
+        margin: 20px;
+      }
+      nav {
+        background: #333;
+        padding: 10px;
+      }
+      nav a {
+        color: white;
+        margin-right: 15px;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+      }
+      nav a:hover {
+        background: #555;
+      }
+      .active {
+        background: yellow;
+        color: black;
+        padding: 5px;
+      }
+      h1 {
+        color: #333;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        border: 1px solid black;
+        padding: 10px;
+      }
+      .thumb {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="active">Главная</a>
+      <a href="forms.html">Формы</a>
+      <a href="js.html">JavaScript</a>
+      <a href="index.html#photos">Фото кота</a>
+      <a
+        href="https://github.com/vmarshirov/g06u28/tree/main/010_html/060_anchor"
+        target="_blank"
+        >Пример якорей</a
+      >
+    </nav>
+
+    <h1>Сайт про кота Глинина Бесика</h1>
+    <p>Это моя контрольная работа по веб-технологиям.</p>
+
+    <h2 id="lists">Списки</h2>
+
+    <p>О Бесике:</p>
+    <ol>
+      <li>Игривый</li>
+      <li>Ласковый</li>
+      <li>Непослушный</li>
+    </ol>
+
+    <p>Любимые занятия Бесика:</p>
+    <ul>
+      <li>Играть с хвостом</li>
+      <li>Пить чай с кружки</li>
+      <li>Смотреть в окно</li>
+    </ul>
+
+    <p>Вложенный список:</p>
+    <ul>
+      <li>
+        Утро
+        <ul>
+          <li>Поесть</li>
+          <li>Поспать</li>
+        </ul>
+      </li>
+      <li>
+        Вечер
+        <ul>
+          <li>Повисить на шторе</li>
+          <li>Лечь спать</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2 id="photos">Фотографии</h2>
+
+    <p>Портрет Глинина Бесика:</p>
+    <img src="IMG_2198.jpeg" width="200" alt="Кот" />
+
+    <p>Миниатюра (кликни — откроется большое фото):</p>
+    <a href="IMG_2198.jpeg" target="_blank">
+      <img src="IMG_2198.jpeg" class="thumb" alt="Миниатюра" />
+    </a>
+
+    <h2 id="table">Достижения кота</h2>
+
+    <table>
+      <tr>
+        <th>Год</th>
+        <th>Достижение</th>
+        <th>Фото</th>
+        <th>Ссылка</th>
+      </tr>
+      <tr>
+        <td>2026</td>
+        <td>Родился</td>
+        <td><img src="DSC00473.jpg" width="100" alt="Котёнок" /></td>
+        <td><a href="DSC00473.jpg" target="_blank">Фото</a></td>
+      </tr>
+      <tr>
+        <td>2027</td>
+        <td>Смотрит футбол</td>
+        <td><img src="IMG_9479.JPG" width="100" alt="Кот" /></td>
+        <td><a href="IMG_9479.JPG" target="_blank">Фото</a></td>
+      </tr>
+    </table>
+
+    <hr />
+    <p><a href="index.html">На главную</a></p>
+  </body>
+</html>
