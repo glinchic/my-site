@@ -1,53 +1,84 @@
 <!doctype html>
-<html>
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript</title>
     <style>
+      body {
+        font-family: Arial;
+        background: #ffffff;
+        margin: 20px;
+        color: #1a1a1a;
+      }
       img {
         max-width: 100%;
         height: auto;
       }
-      body {
-        font-family: Arial;
-        background: #f0f0f0;
-        margin: 20px;
-      }
       nav {
-        background: #333;
+        background: #1a1a1a;
         padding: 10px;
       }
       nav a {
-        color: white;
+        color: #ffffff;
         margin-right: 15px;
         text-decoration: none;
         padding: 8px 12px;
         border-radius: 5px;
       }
       nav a:hover {
-        background: #555;
+        background: #4a4a4a;
       }
       .active {
-        background: yellow;
-        color: black;
+        background: #808080;
+        color: #ffffff;
         padding: 5px;
+      }
+      h1 {
+        color: #1a1a1a;
+        border-bottom: 3px solid #4a4a4a;
+        padding-bottom: 10px;
+      }
+      h2 {
+        color: #4a4a4a;
       }
       input {
-        padding: 5px;
+        padding: 8px;
+        border: 1px solid #4a4a4a;
+        border-radius: 5px;
+        margin: 5px 0;
+      }
+      input:focus {
+        border-color: #808080;
+        outline: none;
+        background: #f5f5f5;
       }
       button {
-        padding: 5px 10px;
+        background: #4a4a4a;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
         margin-top: 5px;
+      }
+      button:hover {
+        background: #1a1a1a;
+      }
+      a {
+        color: #4a4a4a;
       }
     </style>
   </head>
   <body>
+    <a id="top"></a>
+
     <nav>
-      <a href="index.html">Главная</a>
-      <a href="forms.html">Формы</a>
-      <a href="js.html" class="active">JavaScript</a>
-      <a href="index.html#photos">Фото кота</a>
+      <a href="index.html" target="_self">Главная</a>
+      <a href="forms.html" target="_self">Формы</a>
+      <a href="js.html" class="active" target="_self">JavaScript</a>
+      <a href="index.html#photos" target="_self">Фото кота</a>
       <a
         href="https://github.com/vmarshirov/g06u28/tree/main/010_html/060_anchor"
         target="_blank"
@@ -57,7 +88,6 @@
 
     <h1>Работа с JavaScript</h1>
 
-    <!-- ========== 1. ЧТЕНИЕ ИЗ DOM ========== -->
     <h2>1. Читаем данные из DOM</h2>
 
     <p>Имя: <span id="name_id">Глинин</span></p>
@@ -68,9 +98,10 @@
     <p id="result_id"></p>
 
     <p>Скриншот:</p>
-    <img src="screeenshot.png" width="600" alt="Скриншот" />
+    <img src="screeenshot.png" width="600" alt="Скриншот DOM" />
 
-    <!-- ========== 2. КИРИЛЛИЦА → ЛАТИНИЦА ========== -->
+    <p><a href="#top" target="_self">К началу страницы</a></p>
+
     <h2>2. Меняем кириллицу на латиницу</h2>
 
     <p>Имя: <span id="name2_id">Глинин</span></p>
@@ -79,7 +110,8 @@
     <button id="for_click2">Преобразовать в латиницу</button>
     <p id="result2_id"></p>
 
-    <!-- ========== 3. АЛГОРИТМИЧЕСКАЯ ЗАДАЧА ========== -->
+    <p><a href="#top" target="_self">К началу страницы</a></p>
+
     <h2>3. Алгоритмическая задача</h2>
 
     <p>
@@ -99,13 +131,12 @@
     <button id="for_click3">Решить</button>
     <p id="result3_id"></p>
 
+    <p><a href="#top" target="_self">К началу страницы</a></p>
+
     <hr />
-    <p><a href="index.html">На главную</a></p>
+    <p><a href="index.html" target="_self">На главную</a></p>
 
     <script>
-      // ============================================
-      // 1. ЧТЕНИЕ ИЗ DOM
-      // ============================================
       function find_edit() {
         const name_node = document.getElementById("name_id");
         console.log(name_node.innerHTML);
@@ -127,9 +158,6 @@
       const node_for_click = document.getElementById("for_click");
       node_for_click.addEventListener("click", find_edit);
 
-      // ============================================
-      // 2. КИРИЛЛИЦА → ЛАТИНИЦА
-      // ============================================
       function find_edit2() {
         const name_node = document.getElementById("name2_id");
         console.log(name_node.innerHTML);
@@ -147,9 +175,6 @@
       const node_for_click2 = document.getElementById("for_click2");
       node_for_click2.addEventListener("click", find_edit2);
 
-      // ============================================
-      // 3. АЛГОРИТМИЧЕСКАЯ ЗАДАЧА
-      // ============================================
       function find_edit3() {
         const x_node = document.getElementById("x_id");
         const a_node = document.getElementById("a_id");

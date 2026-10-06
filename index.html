@@ -1,65 +1,82 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сайт про кота</title>
     <style>
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-      body {
-        font-family: Arial;
-        background: #f0f0f0;
-        margin: 20px;
-      }
-      nav {
-        background: #333;
-        padding: 10px;
-      }
-      nav a {
-        color: white;
-        margin-right: 15px;
-        text-decoration: none;
-        padding: 8px 12px;
-        border-radius: 5px;
-      }
-      nav a:hover {
-        background: #555;
-      }
-      .active {
-        background: yellow;
-        color: black;
-        padding: 5px;
-      }
-      h1 {
-        color: #333;
-      }
-      table {
-        border-collapse: collapse;
-      }
-      td,
-      th {
-        border: 1px solid black;
-        padding: 10px;
-      }
-      .thumb {
-        width: 100px;
-      }
+        body {
+            font-family: Arial;
+            background: #ffffff;
+            margin: 20px;
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        nav {
+            background: #1a1a1a;
+            padding: 10px;
+        }
+        nav a {
+            color: #ffffff;
+            margin-right: 15px;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: #4a4a4a;
+        }
+        .active {
+            background: #808080;
+            color: #ffffff;
+            padding: 5px;
+        }
+        h1 {
+            color: #1a1a1a;
+            border-bottom: 3px solid #4a4a4a;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #4a4a4a;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: #f0f0f0;
+        }
+        td, th {
+            border: 1px solid #4a4a4a;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #e0e0e0;
+            color: #1a1a1a;
+        }
+        tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        .thumb {
+            width: 100px;
+        }
+        a {
+            color: #4a4a4a;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+
+    <a id="top"></a>
+
     <nav>
-      <a href="index.html" class="active">Главная</a>
-      <a href="forms.html">Формы</a>
-      <a href="js.html">JavaScript</a>
-      <a href="index.html#photos">Фото кота</a>
-      <a
-        href="https://github.com/vmarshirov/g06u28/tree/main/010_html/060_anchor"
-        target="_blank"
-        >Пример якорей</a
-      >
+        <a href="index.html" class="active" target="_self">Главная</a>
+        <a href="forms.html" target="_self">Формы</a>
+        <a href="js.html" target="_self">JavaScript</a>
+        <a href="index.html#photos" target="_self">Фото кота</a>
+        <a href="https://github.com/vmarshirov/g06u28/tree/main/010_html/060_anchor" target="_blank">Пример якорей</a>
     </nav>
 
     <h1>Сайт про кота Глинина Бесика</h1>
@@ -69,70 +86,79 @@
 
     <p>О Бесике:</p>
     <ol>
-      <li>Игривый</li>
-      <li>Ласковый</li>
-      <li>Непослушный</li>
+        <li>Игривый</li>
+        <li>Ласковый</li>
+        <li>Непослушный</li>
     </ol>
 
     <p>Любимые занятия Бесика:</p>
     <ul>
-      <li>Играть с хвостом</li>
-      <li>Пить чай с кружки</li>
-      <li>Смотреть в окно</li>
+        <li>Играть с хвостом</li>
+        <li>Пить чай с кружки</li>
+        <li>Смотреть в окно</li>
     </ul>
 
     <p>Вложенный список:</p>
     <ul>
-      <li>
-        Утро
-        <ul>
-          <li>Поесть</li>
-          <li>Поспать</li>
-        </ul>
-      </li>
-      <li>
-        Вечер
-        <ul>
-          <li>Повисить на шторе</li>
-          <li>Лечь спать</li>
-        </ul>
-      </li>
+        <li>Утро
+            <ul>
+                <li>Поесть</li>
+                <li>Поспать</li>
+            </ul>
+        </li>
+        <li>Вечер
+            <ul>
+                <li>Повисить на шторе</li>
+                <li>Лечь спать</li>
+            </ul>
+        </li>
     </ul>
 
-    <h2 id="photos">Фотографии</h2>
+    <p><a href="#top" target="_self">К началу страницы</a></p>
+
+    <a id="photos"></a>
+    <h2>Фотографии</h2>
 
     <p>Портрет Глинина Бесика:</p>
-    <img src="IMG_2198.jpeg" width="200" alt="Кот" />
+    <img src="IMG_2198.jpeg" width="200" alt="Кот Глинин Бесик">
 
     <p>Миниатюра (кликни — откроется большое фото):</p>
     <a href="IMG_2198.jpeg" target="_blank">
-      <img src="IMG_2198.jpeg" class="thumb" alt="Миниатюра" />
+        <img src="IMG_2198.jpeg" class="thumb" alt="Миниатюра кота">
     </a>
 
-    <h2 id="table">Достижения кота</h2>
+    <p><a href="#top" target="_self">К началу страницы</a></p>
+
+    <a id="table"></a>
+    <h2>Достижения кота</h2>
 
     <table>
-      <tr>
-        <th>Год</th>
-        <th>Достижение</th>
-        <th>Фото</th>
-        <th>Ссылка</th>
-      </tr>
-      <tr>
-        <td>2026</td>
-        <td>Родился</td>
-        <td><img src="DSC00473.jpg" width="100" alt="Котёнок" /></td>
-        <td><a href="DSC00473.jpg" target="_blank">Фото</a></td>
-      </tr>
-      <tr>
-        <td>2027</td>
-        <td>Смотрит футбол</td>
-        <td><img src="IMG_9479.JPG" width="100" alt="Кот" /></td>
-        <td><a href="IMG_9479.JPG" target="_blank">Фото</a></td>
-      </tr>
+        <tr>
+            <th>Год</th>
+            <th>Достижение</th>
+            <th>Фото</th>
+            <th>Ссылка</th>
+        </tr>
+        <tr>
+            <td rowspan="2" bgcolor="Silver">2026</td>
+            <td>Родился</td>
+            <td><img src="DSC00473.jpg" width="100" alt="Котёнок"></td>
+            <td><a href="DSC00473.jpg" target="_blank">Фото</a></td>
+        </tr>
+        <tr>
+            <td>Смотрит футбол</td>
+            <td><img src="IMG_9479.JPG" width="100" alt="Кот смотрит футбол"></td>
+            <td><a href="IMG_9479.JPG" target="_blank">Фото</a></td>
+        </tr>
+        <tr>
+            <td colspan="4">Итого: 2 достижения</td>
+        </tr>
     </table>
 
-    <hr />
-    <p><a href="index.html">На главную</a></p>
-  </body>
+    <p><a href="#top" target="_self">К началу страницы</a></p>
+
+    <hr>
+    <p><a href="index.html" target="_self">На главную</a></p>
+
+</body>
 </html>
